@@ -1,0 +1,25 @@
+{
+  "weather" : {
+    "rain" : {
+      "icon" : "icon/path",
+      "region-locked" : false
+    }
+  },
+  "seasons" : {
+    "spring" : {
+      "icon" : "icon/path"
+    },
+    "summer" : {
+      "icon" : "icon/path"
+    },
+    "autumn" : {
+      "icon" : "icon/path"
+    },
+    "winter" : {
+      "icon" : "icon/path"
+    }
+  },
+  "" : {
+
+  }
+}
