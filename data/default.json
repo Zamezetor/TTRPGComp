@@ -1,25 +1,237 @@
 {
   "weather" : {
     "rain" : {
+      "region-locked" : {
+        "locked" : false,
+        "region" : ""
+      },
       "icon" : "icon/path",
-      "region-locked" : false
+      "chance" : 20,
+      "length" : ["50s", "50m", "23h", "2d" ],
+      "conditions" : []
+    },
+    "clear" : {
+      "region-locked" : {
+        "locked" : false,
+        "region" : ""
+      },
+      "icon" : "icon/path",
+      "chance" : 30,
+      "length" : ["50s", "50m", "23h", "2d" ],
+      "conditions" : []
+    },
+    "lightning-storm" : {
+      "region-locked" : {
+        "locked" : false,
+        "region" : ""
+      },
+      "icon" : "icon/path",
+      "chance" : 10,
+      "length" : ["50s", "50m", "23h", "2d" ],
+      "conditions" : []
+    },
+    "acid-rain" : {
+      "region-locked" : {
+        "locked" : true,
+        "region" : ""
+      },
+      "icon" : "icon/path",
+      "chance" : 1,
+      "length" : ["50s", "50m", "23h", "2d" ],
+      "conditions" : []
+    },
+    "windy" : {
+      "region-locked" : {
+        "locked" : false,
+        "region" : ""
+      },
+      "icon" : "icon/path",
+      "chance" : 30,
+      "length" : ["50s", "50m", "23h", "2d" ],
+      "conditions" : []
+    },
+    "fire-storm" : {
+      "region-locked" : {
+        "locked" : true,
+        "region" : ""
+      },
+      "icon" : "icon/path",
+      "chance" : 1,
+      "length" : ["50s", "50m", "23h", "2d" ],
+      "conditions" : []
+    },
+    "sharknado" : {
+      "region-locked" : {
+        "locked" : true,
+        "region" : ""
+      },
+      "icon" : "icon/path",
+      "chance" : 8,
+      "length" : ["50s", "50m", "23h", "2d" ],
+      "conditions" : []
     }
   },
   "seasons" : {
     "spring" : {
-      "icon" : "icon/path"
+      "icon" : "icon/path",
+      "length" : "90d",
+      "sunrise" : {
+        "hour" : 6,
+        "minute" : 0
+      },
+      "sunset" : {
+        "hour" : 19,
+        "minute" : 0
+      },
+      "conditions" : []
     },
     "summer" : {
-      "icon" : "icon/path"
+      "icon" : "icon/path",
+      "length" : "90d",
+      "sunrise" : {
+        "hour" : 5,
+        "minute" : 0
+      },
+      "sunset" : {
+        "hour" : 20,
+        "minute" : 0
+      },
+      "conditions" : []
     },
     "autumn" : {
-      "icon" : "icon/path"
+      "icon" : "icon/path",
+      "length" : "90d",
+      "sunrise" : {
+        "hour" : 6,
+        "minute" : 0
+      },
+      "sunset" : {
+        "hour" : 19,
+        "minute" : 0
+      },
+      "conditions" : []
     },
     "winter" : {
-      "icon" : "icon/path"
+      "icon" : "icon/path",
+      "length" : "90d",
+      "sunrise" : {
+        "hour" : 7,
+        "minute" : 0
+      },
+      "sunset" : {
+        "hour" : 18,
+        "minute" : 0
+      },
+      "conditions" : []
     }
   },
-  "" : {
+  "regions" : {
 
-  }
+  },
+  "terrain" : {
+
+  },
+  "time" : {
+    "hours-per-day" : 24,
+    "meridiem-terms": {
+      "ante" : "AM",
+      "post" : "PM"
+    },
+    "months-per-year" : 12,
+    "months" : {
+      "month1" : {
+        "days" : 31
+      },
+      "month2" : {
+        "days" : 28
+      },
+      "month3" : {
+        "days" : 31
+      },
+      "month4" : {
+        "days" : 30
+      },
+      "month5" : {
+        "days" : 31
+      },
+      "month6" : {
+        "days" : 30
+      },
+      "month7" : {
+        "days" : 31
+      },
+      "month8" : {
+        "days" : 31
+      },
+      "month9" : {
+        "days" : 30
+      },
+      "month10" : {
+        "days" : 31
+      },
+      "month11" : {
+        "days" : 30
+      },
+      "month12" : {
+        "days" : 31
+      }
+    },
+    "days-per-week" : 7,
+    "current-time": {
+      "second" : 0,
+      "minute" : 0,
+      "hour" : 7,
+      "day" : 1,
+      "week" : 1,
+      "month" : 1,
+      "year": 0
+    }
+  },
+  "moons" : {
+    "moon-amount" : 1,
+    "moon-phases" : {
+      "new" : {
+        "length" :"4d",
+        "icon" : "icon/path"
+      },
+      "waxing cresent" : {
+        "length" :"4d",
+        "icon" : "icon/path"
+      },
+      "waxing half" : {
+        "length" :"4d",
+        "icon" : "icon/path"
+      },
+      "waxing gibbous" : {
+        "length" :"4d",
+        "icon" : "icon/path"
+      },
+      "full" : {
+        "length" :"4d",
+        "icon" : "icon/path"
+      },
+      "waning gibbous" : {
+        "length" :"4d",
+        "icon" : "icon/path"
+      },
+      "waning half" : {
+        "length" :"4d",
+        "icon" : "icon/path"
+      },
+      "waning cresent" : {
+        "length" :"4d",
+        "icon" : "icon/path"
+      }
+    },
+    "moons" : {
+      "moon1" : {
+        "phase" : "new",
+        "time-next" : "3d"
+      }
+    }
+
+  },
+  "eras" : {
+        
+     }
 }
