@@ -177,18 +177,22 @@
       }
     },
     "days-per-week" : 7,
+    "weekday-names" : ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
     "current-time": {
       "second" : 0,
-      "minute" : 0,
+      "minute" : 30,
       "hour" : 7,
       "day" : 1,
-      "week" : 1,
+      "week" : {
+        "week-num" : 1,
+        "week-day" : 0
+      },
       "month" : 1,
       "year": 0
     }
   },
   "moons" : {
-    "moon-amount" : 1,
+    "moon-amount" : 5,
     "moon-phases" : {
       "new" : {
         "length" :"4d",
@@ -227,11 +231,52 @@
       "moon1" : {
         "phase" : "new",
         "time-next" : "3d"
+      },
+      "moon2" : {
+        "phase" : "new",
+        "time-next" : "1d"
+      },
+      "moon3" : {
+        "phase" : "full",
+        "time-next" : "2d"
+      },
+      "moon4" : {
+        "phase" : "waxing gibbous",
+        "time-next" : "1d"
+      },
+      "moon5" : {
+        "phase" : "waning cresent",
+        "time-next" : "4d"
       }
     }
 
   },
   "eras" : {
-        
-     }
+       "era-list" : ["BCE","CE"],
+       "era-len" : [100000,10000],
+       "current-era" : 1
+  },
+  "random-events" : {
+    "nothing" : {
+      "chance" : 102,
+      "duration" : {
+        "randomise" : true
+      }
+    },
+    "star-fall" : {
+      "chance" : 1,
+      "prerequisite" : {
+        "time" : "night",
+        "weather" : "clear"
+      },
+      "duration" : {
+        "randomise" : false,
+        "days" : 0,
+        "hours" : 0,
+        "minutes" : 30,
+        "seconds" : 0
+      },
+      "special-effect" : ""
+    }
+  }
 }

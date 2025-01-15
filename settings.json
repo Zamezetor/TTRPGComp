@@ -1,0 +1,11 @@
+{
+  "month-abbrev" : {
+    "len" : 3,  
+    "abbrev" : false
+  },
+  "day-abbrev" : {
+    "len" : 3,
+    "abbrev" : false
+  },
+  "split-meridiem" : false
+}

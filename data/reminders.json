@@ -1,0 +1,44 @@
+{
+  "reminder1" : {
+    "repeat" : {
+      "repeats" : true,
+      "amount" : -1
+    }, 
+    "conditions" : {
+      "moon" : {
+        "moons" : [1,3,5],
+        "phase" : ["full", "full", "full"]
+      },
+      "season" : "spring"
+    },
+    "name" : "Spring Odd Moon Synchronization",
+    "description" : "1st, 3rd, and 5th moon are full, +1 temp hp to all under the moonlight"
+  },
+  "reminder2" : {
+    "repeat" : {
+      "repeats" : true,
+      "amount" : -1
+    }, 
+    "conditions" : {
+      "time": {
+        "week" : {
+          "weekday" : 0,
+          "week-num" : [1,10,50]
+        },
+        "region": "[country name]"
+      }
+    },
+    "name" : "Festival",
+    "description" : "Festival on the [weekday 0] of the first, tenth and fiftieth weeks, celebrated by citizens of [country name]"  
+  },
+  "reminder3" : {
+    "repeat" : {
+      "repeats" : false
+    }, 
+    "conditions" : {
+      "special-event" : "star-fall"
+      },
+      "name" : "Meteor Impact",
+    "description" : "Captial city of [country] is obliterated by a meteor impact during the last star fall"
+  }    
+}
