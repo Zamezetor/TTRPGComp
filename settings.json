@@ -7,5 +7,6 @@
     "len" : 3,
     "abbrev" : false
   },
-  "split-meridiem" : false
+  "split-meridiem" : false,
+  "dark-mode" : true
 }
