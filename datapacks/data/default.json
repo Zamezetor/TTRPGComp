@@ -1,4 +1,8 @@
 {
+  "background" : {
+    "dark" : "#6c6c6c",
+    "light" : "#ffffff"
+  }, 
   "weather" : {
     "rain" : {
       "region-locked" : {
