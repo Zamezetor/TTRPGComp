@@ -1,5 +1,5 @@
 # Imports
-import random, json, math, PIL
+import random, math, PIL
 import tkinter as tk
 from app import mainApp
 
