@@ -9,7 +9,7 @@
         "locked" : false,
         "region" : ""
       },
-      "icon" : "icon/path",
+      "icon" : "rain.png",
       "chance" : 20,
       "length" : ["50s", "50m", "23h", "2d" ],
       "conditions" : []
@@ -19,7 +19,7 @@
         "locked" : false,
         "region" : ""
       },
-      "icon" : "icon/path",
+      "icon" : "clear.png",
       "chance" : 30,
       "length" : ["50s", "50m", "23h", "2d" ],
       "conditions" : []
@@ -29,7 +29,7 @@
         "locked" : false,
         "region" : ""
       },
-      "icon" : "icon/path",
+      "icon" : "lightning-storm.png",
       "chance" : 10,
       "length" : ["50s", "50m", "23h", "2d" ],
       "conditions" : []
@@ -39,7 +39,7 @@
         "locked" : true,
         "region" : ""
       },
-      "icon" : "icon/path",
+      "icon" : "acid_rain.png",
       "chance" : 1,
       "length" : ["50s", "50m", "23h", "2d" ],
       "conditions" : []
@@ -49,7 +49,7 @@
         "locked" : false,
         "region" : ""
       },
-      "icon" : "icon/path",
+      "icon" : "windy.png",
       "chance" : 30,
       "length" : ["50s", "50m", "23h", "2d" ],
       "conditions" : []
@@ -59,25 +59,15 @@
         "locked" : true,
         "region" : ""
       },
-      "icon" : "icon/path",
+      "icon" : "fire-storm.png",
       "chance" : 1,
-      "length" : ["50s", "50m", "23h", "2d" ],
-      "conditions" : []
-    },
-    "sharknado" : {
-      "region-locked" : {
-        "locked" : true,
-        "region" : ""
-      },
-      "icon" : "icon/path",
-      "chance" : 8,
       "length" : ["50s", "50m", "23h", "2d" ],
       "conditions" : []
     }
   },
   "seasons" : {
     "spring" : {
-      "icon" : "icon/path",
+      "icon" : "spring.png",
       "length" : "90d",
       "sunrise" : {
         "hour" : 6,
@@ -90,7 +80,7 @@
       "conditions" : []
     },
     "summer" : {
-      "icon" : "icon/path",
+      "icon" : "summer.png",
       "length" : "90d",
       "sunrise" : {
         "hour" : 5,
@@ -103,7 +93,7 @@
       "conditions" : []
     },
     "autumn" : {
-      "icon" : "icon/path",
+      "icon" : "fall.png",
       "length" : "90d",
       "sunrise" : {
         "hour" : 6,
@@ -116,7 +106,7 @@
       "conditions" : []
     },
     "winter" : {
-      "icon" : "icon/path",
+      "icon" : "winter.png",
       "length" : "90d",
       "sunrise" : {
         "hour" : 7,
@@ -130,7 +120,38 @@
     }
   },
   "regions" : {
-
+    "grassland" : {
+      "icon" : "grassland.png",
+      "terrain_default" : "flat"
+    },
+    "arctic" : {
+      "icon" : "arctic.png",
+      "terrain_default" : "flat"
+    },
+    "coast" : {
+      "icon" : "coast.png",
+      "terrain_default" : "flat"
+    },
+    "desert" : {
+      "icon" : "desert.png",
+      "terrain_default" : "flat"
+    },
+    "forest" : {
+      "icon" : "forest.png",
+      "terrain_default" : "flat"
+    },
+    "mountain" : {
+      "icon" : "mountain.png",
+      "terrain_default" : "flat"
+    },
+    "swamp" : {
+      "icon" : "forest.png",
+      "terrain_default" : "flat"
+    },
+    "underdark" : {
+      "icon" : "mountain.png",
+      "terrain_default" : "flat"
+    }
   },
   "terrain" : {
 

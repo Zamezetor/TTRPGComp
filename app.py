@@ -9,6 +9,7 @@ class mainApp():
     self.startup()
     self.app = gz.App(title = "TTRPG Companion", width = width, height = height, layout = "grid", bg = self.background_check(), visible = True)
     self.adjust_size()
+    #self.app.when_resized = self.adjust_size()
 
   def file_check(self):
     # Check for Crucial files (reminders, default datapack,settings)
@@ -71,11 +72,12 @@ class mainApp():
     self.update()
 
 
-  def isRunning(self):
-    while self.running:
-      self.app.when_resized = self.adjust_size() 
+  """def isRunning(self):
+    pass
+      
+      
 
-
+"""
 
   def update(self):
     self.buildApp()
@@ -100,14 +102,17 @@ class mainApp():
     
     # Initiative
 
+    # Options
+    load_button = gz.PushButton(opts_box, grid=[0, 2], width = self.opts_width/2, height = self.height/6, command = self.load_save_file, text = "Load Save")
+    save_button = gz.PushButton(opts_box, grid=[1, 2], width = self.opts_width/2, height = self.height/6, command = self.load_save_file, text = "Save Save")
 
-  def load_save_file():
-    """
-    gz.PushButton(self.app, command=get_file, text="Get file")
-    https://lawsie.github.io/guizero/alerts/#:~:text=**%20Example%3A%20Get%20a%20file%20name**
-    file_name.value = self.app.select_file()
-    file_name = Text(app)
-    """
+
+  def load_save_file(self):
+    # https://lawsie.github.io/guizero/alerts/#:~:text=**%20Example%3A%20Get%20a%20file%20name*
+    print((self.app.select_file()).value)
+    
+    
+
 
 
   def showApp(self):
