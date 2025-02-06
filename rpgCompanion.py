@@ -23,7 +23,6 @@ def getScreen():
 # Code
 width, height = getScreen()
 application = mainApp(width, height)
-application.isRunning()
+#application.isRunning()
 application.showApp()
 
-  
