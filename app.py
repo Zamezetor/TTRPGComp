@@ -88,13 +88,20 @@ class mainApp():
     info_box = gz.Box(self.app, grid = [0, 0], width = self.info_width, height = self.height, layout = "grid")
     init_box = gz.Box(self.app, grid = [1, 0], width = self.init_width, height = self.height, layout = "grid", border = 1)
     opts_box = gz.Box(self.app, grid = [2, 0], width = self.opts_width, height = self.height, layout = "grid")
-    save_box = gz.Box(opts_box, grid = [0, 1], width = self.opts_width, height = self.opts_width/4, layout = "grid")
 
     # Information
     time_box        = gz.Box(info_box, grid = [0, 0], layout = "grid", width = self.info_width, height = int(self.info_width/4))
     icon_box_1      = gz.Box(info_box, grid = [0, 1], layout = "grid", width = self.info_width, height = int(self.info_width/2))
     progression_box = gz.Box(info_box, grid = [0, 3], layout = "grid", width = self.info_width, height = int(self.info_width/4))
-    empty_box_1     = gz.Box(info_box, grid = [0, 2], layout = "grid", width = self.info_width, height = int(self.height - self.info_width-8))
+    empty_box_1     = gz.Box(info_box, grid = [0, 2], layout = "grid", width = self.info_width, height = int(self.height - self.info_width - 8))
+  
+    # Progression Buttons
+    restShort = gz.PushButton(progression_box, grid = [0, 0], width = int((self.info_width/3) - 4), height = int((self.info_width/8) - 6), image = "./buttonTextIcons/shortRest.png",  command = self.advanceTimeShort)
+    restLong  = gz.PushButton(progression_box, grid = [0, 1], width = int((self.info_width/3) - 4), height = int((self.info_width/8) - 6), image = "./buttonTextIcons/longRest.png",   command = self.advanceTimeLong)
+    sunrise   = gz.PushButton(progression_box, grid = [1, 0], width = int((self.info_width/3) - 4), height = int((self.info_width/8) - 6), image = "./buttonTextIcons/sunrise.png",    command = self.advanceTimeDay)
+    sunset    = gz.PushButton(progression_box, grid = [1, 1], width = int((self.info_width/3) - 4), height = int((self.info_width/8) - 6), image = "./buttonTextIcons/sunset.png",     command = self.advanceTimeNight)
+    roundNext = gz.PushButton(progression_box, grid = [2, 0], width = int((self.info_width/3) - 4), height = int((self.info_width/8) - 6), image = "./buttonTextIcons/nextRound.png",  command = self.advanceTimeRound)
+    custom    = gz.PushButton(progression_box, grid = [2, 1], width = int((self.info_width/3) - 4), height = int((self.info_width/8) - 6), image = "./buttonTextIcons/customTime.png", command = self.advanceTimeCustom)
 
     # Information Icons
     weather_icon = gz.Picture(icon_box_1, grid = [0, 0], image = f"./datapacks/icons/weather/{self.weather_current}", width = int(self.info_width/2), height = int(self.info_width/4))
@@ -105,19 +112,22 @@ class mainApp():
     # Initiative
 
     # Options
-    settings_button = gz.PushButton(opts_box, grid = [0, 0], width = int(self.opts_width/2), height = int(self.opts_width/2), command = self.settings_window, image = "./datapacks/icons/gear.png", align = "top")
-    load_button     = gz.PushButton(save_box, grid = [0, 0], width = int(self.opts_width/8), height = int(self.opts_width/8), command = self.load_save_files, text = "Load Save")
-    save_button     = gz.PushButton(save_box, grid = [0, 1], width = int(self.opts_width/8), height = int(self.opts_width/8), command = self.save_save_files, text = "Save Save")
-    notifiy_button  = gz.PushButton(opts_box, grid = [0, 2], width = int(self.opts_width/2), height = int(self.opts_width/2), command = self.show_reminders , image = "./datapacks/icons/bell.png")
-    #empty_box_2     = gz.Box(opts_box, grid = [0, 4], layout = "grid", width = self.opts_width, height = int(self.height - (2*(1.25 * self.opts_width))))
+    settings_button = gz.PushButton(opts_box, grid = [0, 0], width = int(self.opts_width/2),  height = int(self.opts_width/2),  command = self.settings_window, image = "./datapacks/icons/gear.png")
+    notifiy_button  = gz.PushButton(opts_box, grid = [0, 1], width = int(self.opts_width/2),  height = int(self.opts_width/2),  command = self.show_reminders , image = "./datapacks/icons/bell.png")
+    empty_box_2     = gz.Box(       opts_box, grid = [0, 2], width = self.opts_width,         height = int(self.height-2.2*(self.opts_width)),                  layout = "grid")
+    save_box        = gz.Box(       opts_box, grid = [0, 3], width = self.opts_width,         height = int(self.opts_width),                                    layout = "grid", align = "bottom")
+    load_button     = gz.PushButton(save_box, grid = [0, 0], width = int(self.opts_width/2),  height = int(self.opts_width/2),  command = self.load_save_files, image = "./buttonTextIcons/loadSave.png")
+    save_button     = gz.PushButton(save_box, grid = [0, 1], width = int(self.opts_width/2),  height = int(self.opts_width/2),  command = self.save_save_files, image = "./buttonTextIcons/saveSave.png")
 
   def load_save_files(self):
     # https://lawsie.github.io/guizero/alerts/#:~:text=**%20Example%3A%20Get%20a%20file%20name*
     #print((self.app.select_file()).value)
-    self.save = ""
+    pass
+    
     
   def save_save_files(self):
-    self.save = ""
+    pass
+
 
   def settings_window(self):
     pass
@@ -126,6 +136,27 @@ class mainApp():
   def show_reminders(self):
     pass
 
+  def advanceTimeShort(self):
+    pass
+
+  def advanceTimeLong(self):
+    pass
+
+  def advanceTimeDay(self):
+    pass
+
+  def advanceTimeNight(self):
+    pass
+
+  def advanceTimeRound(self):
+    pass
+
+  def advanceTimeCustom(self):
+    pass
+
+  
+  
+  
   def showApp(self):
     self.app.display()
 
