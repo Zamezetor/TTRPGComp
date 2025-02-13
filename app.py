@@ -110,12 +110,17 @@ class mainApp():
     terrain_icon = gz.Picture(icon_box_1, grid = [1, 1], image = f"./datapacks/icons/terrain/{self.terrain_current}", width = int(self.info_width/2), height = int(self.info_width/4))
     
     # Initiative
+    initiative_title = gz.Picture(init_box,       grid = [0, 0, 1, 1], width = int(self.init_width-2), height = int(self.height/12),     image = "./buttonTextIcons/initTitle.png")
+    tracking_box     = gz.Box(    init_box,       grid = [0, 1, 1, 1], width = int(self.init_width-2), height = int(self.height*(9/12)), layout = "grid", border = 1)
+    character_box    = gz.Box(    init_box,       grid = [0, 2, 1, 1], width = int(self.init_width-2), height = int(self.height/6),      layout = "grid")
+    conditions_add   = gz.Combo(  character_box,  grid = [0, 1, 3, 1], options = [],)
+
 
     # Options
     settings_button = gz.PushButton(opts_box, grid = [0, 0], width = int(self.opts_width/2),  height = int(self.opts_width/2),  command = self.settings_window, image = "./datapacks/icons/gear.png")
     notifiy_button  = gz.PushButton(opts_box, grid = [0, 1], width = int(self.opts_width/2),  height = int(self.opts_width/2),  command = self.show_reminders , image = "./datapacks/icons/bell.png")
     empty_box_2     = gz.Box(       opts_box, grid = [0, 2], width = self.opts_width,         height = int(self.height-2.2*(self.opts_width)),                  layout = "grid")
-    save_box        = gz.Box(       opts_box, grid = [0, 3], width = self.opts_width,         height = int(self.opts_width),                                    layout = "grid", align = "bottom")
+    save_box        = gz.Box(       opts_box, grid = [0, 3], width = self.opts_width,         height = int(self.opts_width) + 16,                               layout = "grid", align = "bottom")
     load_button     = gz.PushButton(save_box, grid = [0, 0], width = int(self.opts_width/2),  height = int(self.opts_width/2),  command = self.load_save_files, image = "./buttonTextIcons/loadSave.png")
     save_button     = gz.PushButton(save_box, grid = [0, 1], width = int(self.opts_width/2),  height = int(self.opts_width/2),  command = self.save_save_files, image = "./buttonTextIcons/saveSave.png")
 
@@ -124,14 +129,11 @@ class mainApp():
     #print((self.app.select_file()).value)
     pass
     
-    
   def save_save_files(self):
     pass
 
-
   def settings_window(self):
     pass
-
 
   def show_reminders(self):
     pass
@@ -154,7 +156,9 @@ class mainApp():
   def advanceTimeCustom(self):
     pass
 
-  
+  def conditionsSelect(self):
+    condSelect = gz.Window(self.app, title = "What Conditons Ail You", height = 200, width = 100, bg = self.background_check(), layout = "grid")
+    gz.CheckBox(condSelect, text = f"")
   
   
   def showApp(self):
