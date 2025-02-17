@@ -1,12 +1,15 @@
 import random, json, re
 import guizero as gz
+import tkinter as tk
 from pathlib import Path
+import CreatureStore as CS
 
 class mainApp():
   def __init__(self, width, height):
     self.width = width
     self.height = height
     self.startup()
+    self.creatureDict = {"name": (CS.charInit(0,[''],0))}
     self.app = gz.App(title = "TTRPG Companion", width = width, height = height, layout = "grid", bg = self.background_check(), visible = True)
     self.adjust_size()
     #self.app.when_resized = self.adjust_size()
@@ -110,10 +113,11 @@ class mainApp():
     terrain_icon = gz.Picture(icon_box_1, grid = [1, 1], image = f"./datapacks/icons/terrain/{self.terrain_current}", width = int(self.info_width/2), height = int(self.info_width/4))
     
     # Initiative
-    initiative_title = gz.Picture(init_box,       grid = [0, 0, 1, 1], width = int(self.init_width-2), height = int(self.height/12),     image = "./buttonTextIcons/initTitle.png")
-    tracking_box     = gz.Box(    init_box,       grid = [0, 1, 1, 1], width = int(self.init_width-2), height = int(self.height*(9/12)), layout = "grid", border = 1)
-    character_box    = gz.Box(    init_box,       grid = [0, 2, 1, 1], width = int(self.init_width-2), height = int(self.height/6),      layout = "grid")
-    conditions_add   = gz.Combo(  character_box,  grid = [0, 1, 3, 1], options = [],)
+    initiative_title = gz.Picture(     init_box,       grid = [0, 0, 1, 1], width = int(self.init_width-2), height = int(self.height/12),     image = "./buttonTextIcons/initTitle.png")
+    tracking_canvas  = tk.Canvas(init_box, width = int(self.init_width-2), height = int(self.height*(9/12)), bd = 1, scrollregion = (0,0,0,(len(self.creatureDict)*150)))
+    init_box.add_tk_widget(tracking_canvas, grid = [0, 1, 1, 1])
+    character_box =    gz.Box(         init_box,       grid = [0, 2, 1, 1], width = int(self.init_width-2), height = int(self.height/6),      layout = "grid")
+    conditions_add   = gz.PushButton(  character_box,  grid = [0, 1, 3, 1], text = "Conditions",  command = self.conditionsSelect)
 
 
     # Options
@@ -157,8 +161,11 @@ class mainApp():
     pass
 
   def conditionsSelect(self):
-    condSelect = gz.Window(self.app, title = "What Conditons Ail You", height = 200, width = 100, bg = self.background_check(), layout = "grid")
-    gz.CheckBox(condSelect, text = f"")
+    conditionList = ["Blinded","Stunned","Incapacitated",4,5,6,7,8,9,10]
+    conditionsDict = {}
+    condSelect = gz.Window(self.app, title = "What Conditons Ail You", height = 500, width = 300, bg = self.background_check(), layout = "grid")
+    for i in conditionList:
+      conditionsDict.update({f'{i}Condition': gz.CheckBox(condSelect, text = f"{i}", grid = [0,(1 + conditionList.index(i))], align = "left")})
   
   
   def showApp(self):
