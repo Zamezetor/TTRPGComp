@@ -113,11 +113,11 @@ class mainApp():
     terrain_icon = gz.Picture(icon_box_1, grid = [1, 1], image = f"./datapacks/icons/terrain/{self.terrain_current}", width = int(self.info_width/2), height = int(self.info_width/4))
     
     # Initiative
-    initiative_title = gz.Picture(     init_box,       grid = [0, 0, 1, 1], width = int(self.init_width-2), height = int(self.height/12),     image = "./buttonTextIcons/initTitle.png")
-    tracking_canvas  = tk.Canvas(init_box, width = int(self.init_width-2), height = int(self.height*(9/12)), bd = 1, scrollregion = (0,0,0,(len(self.creatureDict)*150)))
-    init_box.add_tk_widget(tracking_canvas, grid = [0, 1, 1, 1])
-    character_box =    gz.Box(         init_box,       grid = [0, 2, 1, 1], width = int(self.init_width-2), height = int(self.height/6),      layout = "grid")
-    conditions_add   = gz.PushButton(  character_box,  grid = [0, 1, 3, 1], text = "Conditions",  command = self.conditionsSelect)
+    initiative_title = gz.Picture(   init_box,        grid = [0, 0, 1, 1], width = int(self.init_width-2), height = int(self.height/12),     image = "./buttonTextIcons/initTitle.png")
+    tracking_canvas  = tk.Canvas(    init_box.tk,     bd = 1,              width = int(self.init_width-2), height = int(self.height*(9/12)), scrollregion = (0,0,0,(len(self.creatureDict)*150)))
+    init_box.add_tk_widget(          tracking_canvas, grid = [0, 1, 1, 1])
+    character_box =    gz.Box(       init_box,        grid = [0, 2, 1, 1], width = int(self.init_width-2), height = int(self.height/6),      layout = "grid")
+    conditions_add   = gz.PushButton(character_box,   grid = [0, 1, 3, 1], text = "Conditions",  command = self.conditionsSelect)
 
 
     # Options
